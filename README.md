@@ -4,7 +4,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<br> <img src="images\icono_connectaR.png" align="left" width="155">
+<br> <img src="images\icono_connectR.png" align="left" width="155">
 <br><br><br><br>
 
 
