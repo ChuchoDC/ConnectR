@@ -3,9 +3,9 @@
 
 <br> <img src="images\icono_connectR.png" align="left" width="255">
 
-<br><br><br><br>
+<br><br><br><br><br><br>
 
-#**ConnectR**
+# **ConnectR**
 
 <br>
 This is a software fully developed in R, which implements indexes
