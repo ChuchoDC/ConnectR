@@ -1,14 +1,9 @@
-# connectR
-
-
+# ConnectR
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-<<<<<<< HEAD
 <br> <img src="images\icono_connectR.png" align="left" width="155">
 =======
-<br> <img src="images\icono_connectR.png" align="left" width="155">
->>>>>>> 7a2ad680d83fe63624eb0d4d916c57c22998cd58
+
 <br><br><br><br>
 
 
