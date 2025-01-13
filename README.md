@@ -1,15 +1,13 @@
-# ConnectR
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<br> <img src="images\icono_connectR.png" align="left" width="155">
-=======
+
+<br> <img src="images\icono_connectR.png" align="left" width="255">
 
 <br><br><br><br>
 
+#**ConnectR**
 
 <br>
-ConnectR
-
 This is a software fully developed in R, which implements indexes
 proposed by [Sidor et al. (2013)](https://doi.org/10.1073/pnas.1302323110).
 Such indexes include:  **Biogeographic Connectedness**, **Network Cluserting**,
