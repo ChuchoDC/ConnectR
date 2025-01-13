@@ -10,8 +10,10 @@
 <br>
 This is a software fully developed in R, which implements indexes
 proposed by [Sidor et al. (2013)](https://doi.org/10.1073/pnas.1302323110).
+
 Such indexes include:**Biogeographic Connectedness**, **Network Cluserting**,
 **Average Ocurrences**, and **Average Endemics".
+
 The final user only need to create the input into the correct format, indicate
 which index, if not all of them, will be calculated, and determine the amount of
 ages (number of pages) to assess. 
@@ -21,12 +23,12 @@ These analyses can complement biogeographical studies based exclusively on
 geographical ocurrences, with the main advantage of not requiring phylogenies.  
 
 In order for this library to work correctly, the dependencies required are:
-`readxl`
-`dplyr`
-`ggplot2`
-`gridExtra`
-`scales`
-`pbapply`
+`readxl`<br>
+`dplyr` <br>
+`ggplot2`<br>
+`gridExtra`<br>
+`scales`<br>
+`pbapply`<br>
 
 **Important to notice**
 The software is in its final stage of development. 
