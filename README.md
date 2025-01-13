@@ -10,7 +10,7 @@
 <br>
 This is a software fully developed in R, which implements indexes
 proposed by [Sidor et al. (2013)](https://doi.org/10.1073/pnas.1302323110).
-Such indexes include:  **Biogeographic Connectedness**, **Network Cluserting**,
+Such indexes include:**Biogeographic Connectedness**, **Network Cluserting**,
 **Average Ocurrences**, and **Average Endemics".
 The final user only need to create the input into the correct format, indicate
 which index, if not all of them, will be calculated, and determine the amount of
