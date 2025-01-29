@@ -62,9 +62,10 @@ result <- ConnectR(file = "data.xlsx", type = "excel", sheets = c(1, 2), indices
 ###Example 3: Example 3: Use CSV file and customize bootstrap settings
 ```R
 result <- ConnectR(file = "data.csv", type = "csv", n_boot = 500, dist_type = "histogram")
-```R
-¡Important! if no index is decared and the argumen is not included such as in Example 1. All indixes will be calculated. 
 ```
+
+**¡Important!** if no index is declared and the argument is not included such as in Example 1. All indixes will be calculated. 
+
 
 ## **Visualization Customization**
 
