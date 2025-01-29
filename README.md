@@ -15,8 +15,8 @@ Such indexes include:<br>
 **Biogeographic Connectedness**, **Network Cluserting**, **Average Ocurrences**, and **Average Endemics**.
 
 The final user only need to create the input into the correct format, indicate
-which index, if not all of them, will be calculated, and determine the amount of
-ages (number of pages) to assess. 
+which index, if not all of them, will be calculated, and determine the numer of
+ages (number of pages) to assess. [User Manual](Hand_Manual.md)
 
 The software will carry out parametric sampling of the indexes and plot them.
 These analyses can complement biogeographical studies based exclusively on
