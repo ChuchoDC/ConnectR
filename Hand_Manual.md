@@ -29,15 +29,15 @@ ConnectR(file, type, sheets = "", indices = "", n_boot = 1000, dist_type = "dens
 ## **Input Data Format**
 
 The input file must be either an Excel file (`.xlsx`) or a CSV file (`.csv`) and should adhere to the following structure:  
-- **Rows**: Represent taxa/species.  
+- **Rows**: Represent taxon/species.  
 - **Columns**: Represent localities.  
-- **Cell values**: Use `0` for absence and `1` for presence of taxa in localities.  
+- **Cell values**: Use `0` for absence and `1` for taxon presence in localities.  
 
 ### Example:
-|      | Locality1 | Locality2 | Locality3 |
-|------|-----------|-----------|-----------|
-| Taxa1 | 1         | 0         | 1         |
-| Taxa2 | 0         | 1         | 1         |
+|         | Locality1 | Locality2 | Locality3 |
+|---------|-----------|-----------|-----------|
+| Taxon 1 | 1         | 0         | 1         |
+| Taxon 2 | 0         | 1         | 1         |
 
 ---
 
@@ -62,6 +62,8 @@ result <- ConnectR(file = "data.xlsx", type = "excel", sheets = c(1, 2), indices
 ###Example 3: Example 3: Use CSV file and customize bootstrap settings
 ```R
 result <- ConnectR(file = "data.csv", type = "csv", n_boot = 500, dist_type = "histogram")
+```R
+¡Important! if no index is decared and the argumen is not included such as in Example 1. All indixes will be calculated. 
 ```
 
 ## **Visualization Customization**
