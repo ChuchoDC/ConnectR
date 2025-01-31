@@ -14,18 +14,19 @@ proposed by [Sidor et al. (2013)](https://doi.org/10.1073/pnas.1302323110)
 Such indexes include:<br>
 **Biogeographic Connectedness**, **Network Cluserting**, **Average Ocurrences**, and **Average Endemics**.
 
-The final user only need to create the input into the correct format, indicate
+The final user only need to create the input file into the correct format, indicate
 which index, if not all of them, will be calculated, and determine the number of
 ages (number of pages) to assess. [User Manual](Hand_Manual.md)
 
-The software will carry out parametric sampling of the indexes and plot them.
+The software will obtain the desired index by each teporality at the time it also carries out 
+parametric sampling of the indexes and plot them.
 These calculations are complementary to complex network visualizations created either 
 in [Gephi](https://gephi.org/) or [igraph Rpackage](https://igraph.org/).
 
 This kind of analyses are relevant since we can perform biogeographical studies on fossil
 fauna based exclusively on geographical ocurrences. Besides documentation, [ConnectR](https://github.com/ChuchoDC/ConnectR) 
 includes an empirical data set of Cretaceous fossil fishes, Aulopiforms, 
-a group worldwide distributed with a prety well known and numerous fossil record. 
+a worldwide distributed group with a pretty well-known and numerous fossil record. 
 
 
 
