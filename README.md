@@ -18,14 +18,14 @@ The final user only need to create the input file into the correct format, indic
 which index, if not all of them, will be calculated, and determine the number of
 ages (number of pages) to assess. [User Manual](Hand_Manual.md)
 
-The software will obtain the desired index by each teporality at the time it also carries out 
+The software will obtain the desired index by each temporality at the time it also carries out 
 parametric sampling of the indexes and plot them.
 These calculations are complementary to complex network visualizations created either 
 in [Gephi](https://gephi.org/) or [igraph Rpackage](https://igraph.org/).
 
-This kind of analyses are relevant since we can perform biogeographical studies on fossil
+These kind of analyses are relevant since they allow us perform biogeographical studies on fossil
 fauna based exclusively on geographical ocurrences. Besides documentation, [ConnectR](https://github.com/ChuchoDC/ConnectR) 
-includes an empirical data set of Cretaceous fossil fishes, Aulopiforms, 
+includes an empirical dataset of Cretaceous fossil fishes, Aulopiformes, 
 a worldwide distributed group with a pretty well-known and numerous fossil record. 
 
 
