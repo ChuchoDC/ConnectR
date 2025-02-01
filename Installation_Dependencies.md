@@ -1,3 +1,7 @@
+<h1> 
+<a href="https://chuchodc.github.io/ConnectR/">ConnectR</a>
+</h1>
+
 # ConnectR: Installation and Dependencies
 
 ---

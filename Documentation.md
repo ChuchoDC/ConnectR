@@ -1,8 +1,12 @@
+<h1> 
+<a href="https://chuchodc.github.io/ConnectR/">ConnectR</a>
+</h1>
+---
+
 # ConnectR: User Manual
 
 ConnectR is an R function designed to calculate biogeographic connectivity indices with bootstrap sampling. It processes data from Excel or CSV files and generates visualizations of the index distributions.
 
----
 
 ## **Function Overview**
 
