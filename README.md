@@ -16,7 +16,7 @@ Such indexes include:<br>
 
 The final user only need to create the input file into the correct format, indicate
 which index, if not all of them, will be calculated, and determine the number of
-ages (number of pages) to assess. [User Manual](Hand_Manual.md)
+ages (number of pages) to assess. 
 
 The software will obtain the desired index by each temporality at the time it also carries out 
 parametric sampling of the indexes and plot them.
@@ -39,8 +39,8 @@ In order for this library to work correctly, the dependencies required are:<br>
 
 ## Índice
 
-- [Documentation](Hand_Manual.md) 
-- [Installation guide and requirements](Hand_Manual.md)
+- [Documentation](Documentation.md.md) 
+- [Installation guide and requirements](Installation_Dependencies.md.md)
 - [Example of execution]() 
 
 
