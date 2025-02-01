@@ -1,5 +1,7 @@
 # ConnectR: Installation and Dependencies
 
+---
+
 ## **Dependencies**
 
 To run the `ConnectR` function, the following R packages are required:
@@ -12,11 +14,15 @@ To run the `ConnectR` function, the following R packages are required:
 - **pbapply**: For parallelized operations during the bootstrap process.
 
 ### **Dependencies Installation**
-Before using `ConnectR`, you need to install these packages if they are not already installed. You can install them using the following commands:
+Before using `ConnectR`, you need to install these packages if they are not already installed. 
+You can install them using the following command:
 
 ```R
 install.packages(c("readxl", "dplyr", "ggplot2", "gridExtra", "scales", "pbapply"))
 ```
+
+---
+
 ## **Output Example**
 
 The `ConnectR` function returns a data frame with the calculated indices for each sheet in the input data. Here's an example of how the output might look:
