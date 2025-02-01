@@ -29,8 +29,6 @@ includes an empirical dataset of Cretaceous fossil fishes, Aulopiformes,
 a worldwide distributed group with a pretty well-known and numerous fossil record. 
 
 
-
-
 In order for this library to work correctly, the dependencies required are:<br>
 `readxl`<br>
 `dplyr` <br>
@@ -38,6 +36,13 @@ In order for this library to work correctly, the dependencies required are:<br>
 `gridExtra`<br>
 `scales`<br>
 `pbapply`<br>
+
+## Índice
+
+- [Documentation]() 
+- [Installation guide and requirements]()
+- [Example of execution]() 
+
 
 **Important to notice**<br>
 The software is in its final stage of development. 
