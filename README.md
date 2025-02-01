@@ -14,7 +14,7 @@ proposed by [Sidor et al. (2013)](https://doi.org/10.1073/pnas.1302323110)
 Such indexes include:<br>
 **Biogeographic Connectedness**, **Network Cluserting**, **Average Ocurrences**, and **Average Endemics**.
 
-The final user only need to create the input file into the correct format, indicate
+The final user only needs to create the input file into the correct format, indicate
 which index, if not all of them, will be calculated, and determine the number of
 ages (number of pages) to assess. 
 
@@ -39,8 +39,8 @@ In order for this library to work correctly, the dependencies required are:<br>
 
 ## Índice
 
-- [Documentation](Documentation.md.md) 
-- [Installation guide and requirements](Installation_Dependencies.md.md)
+- [Documentation](Documentation.md) 
+- [Installation guide and requirements](Installation_Dependencies.md)
 - [Example of execution]() 
 
 
