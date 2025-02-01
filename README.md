@@ -37,7 +37,7 @@ In order for this library to work correctly, the dependencies required are:<br>
 `scales`<br>
 `pbapply`<br>
 
-## Índice
+## Content
 
 - [Documentation](Documentation.md) 
 - [Installation guide and requirements](Installation_Dependencies.md)

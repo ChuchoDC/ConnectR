@@ -41,6 +41,9 @@ The input file must be either an Excel file (`.xlsx`) or a CSV file (`.csv`) and
 
 ---
 
+
+
+
 ## **Output**
 
 The output is a combined data frame containing the calculated indices for all sheets processed. It includes:  
