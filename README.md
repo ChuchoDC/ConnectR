@@ -39,8 +39,8 @@ In order for this library to work correctly, the dependencies required are:<br>
 
 ## Índice
 
-- [Documentation]() 
-- [Installation guide and requirements]()
+- [Documentation](Hand_Manual.md) 
+- [Installation guide and requirements](Hand_Manual.md)
 - [Example of execution]() 
 
 
