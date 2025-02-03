@@ -6,9 +6,7 @@
   </a>
 </div>
 ---
-
 <br>
-
 # **ConnectR** 
 
 <br>
