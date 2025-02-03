@@ -5,9 +5,13 @@
 
 <br><br><br><br><br><br>
 
-<table>
-  <tr>
-    <td>
+<div style="text-align: right;">
+  <a href="https://github.com/ChuchoDC/ConnectR/main/README_ES.md">
+    <img src="https://img.shields.io/badge/Ver%20en%20espa%C3%B1ol-%23FFFFFF?style=for-the-badge&logoColor=white&color=blue" alt="Ver en español">
+  </a>
+</div>
+
+
 	# **ConnectR** 
 <br>
 This is a software fully developed in R, which implements indexes
@@ -60,11 +64,3 @@ email:
 email:
 <a href="mailto:vertebrata.j@ciencias.unam.mx" class="email">vertebrata.j@ciencias.unam.mx</a>
 
- </td>
-<td align="right">
-<a href="https://github.com/ChuchoDC/ConnectR/main/README_ES.md">
-  <img src="https://img.shields.io/badge/Ver%20en%20espa%C3%B1ol-%23FFFFFF?style=for-the-badge&logoColor=white&color=blue" alt="Ver en español">
-      </a>
-    </td>
-  </tr>
-</table>
