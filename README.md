@@ -1,18 +1,15 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-
-<br> <img src="images\icono_connectR.png" align="left" width="130">
-
-<br><br><br><br><br><br>
-
 <div style="text-align: right;">
   <a href="https://github.com/ChuchoDC/ConnectR/main/README_ES.md">
     <img src="https://img.shields.io/badge/Ver%20en%20espa%C3%B1ol-%23FFFFFF?style=for-the-badge&logoColor=white&color=blue" alt="Ver en español">
   </a>
 </div>
 
+<br> <img src="images\icono_connectR.png" align="left" width="130">
 
-	# **ConnectR** 
+<br><br><br><br><br><br>
+
+# **ConnectR** 
 <br>
 This is a software fully developed in R, which implements indexes
 proposed by [Sidor et al. (2013)](https://doi.org/10.1073/pnas.1302323110)
