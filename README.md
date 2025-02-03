@@ -5,10 +5,9 @@
     <img src="https://img.shields.io/badge/Ver%20en%20espa%C3%B1ol-%23FFFFFF?style=for-the-badge&logoColor=white&color=blue" alt="Ver en español">
   </a>
 </div>
-
 ---
 
-<br><br>
+<br>
 
 # **ConnectR** 
 
