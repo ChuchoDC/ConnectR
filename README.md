@@ -5,13 +5,11 @@
 
 <br><br><br><br><br><br>
 
-# **ConnectR** 
+<table>
+  <tr>
+    <td>
+	# **ConnectR** 
 <br>
-
-<a href="https://github.com/ChuchoDC/ConnectR/main/README_ES.md">
-  <img src="https://img.shields.io/badge/Ver%20en%20espa%C3%B1ol-%23FFFFFF?style=for-the-badge&logoColor=white&color=blue" alt="Ver en español">
-</a>
-
 This is a software fully developed in R, which implements indexes
 proposed by [Sidor et al. (2013)](https://doi.org/10.1073/pnas.1302323110)
 
@@ -61,3 +59,12 @@ email:
 [Dr. Jesús Alberto Díaz-Cruz](https://github.com/ChuchoDC)  
 email:
 <a href="mailto:vertebrata.j@ciencias.unam.mx" class="email">vertebrata.j@ciencias.unam.mx</a>
+
+ </td>
+<td align="right">
+<a href="https://github.com/ChuchoDC/ConnectR/main/README_ES.md">
+  <img src="https://img.shields.io/badge/Ver%20en%20espa%C3%B1ol-%23FFFFFF?style=for-the-badge&logoColor=white&color=blue" alt="Ver en español">
+      </a>
+    </td>
+  </tr>
+</table>
