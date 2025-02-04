@@ -1,7 +1,7 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
   <img src="images/icono_connectR.png" width="130">
-  <a href="https://github.com/ChuchoDC/ConnectR/blob/main/README_ES.md">
+  <a href="https://chuchodc.github.io/ConnectR/README_ES">
     <img src="https://img.shields.io/badge/Ver%20en%20espa%C3%B1ol-%23FFFFFF?style=for-the-badge&logoColor=white&color=blue" alt="Ver en español">
   </a>
 </div>
