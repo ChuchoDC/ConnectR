@@ -31,6 +31,7 @@ Para que el paquete funcion correctamente, las dependencias necesarias son<br>
 `gridExtra`<br>
 `scales`<br>
 `pbapply`<br>
+<br>
 
 ## Contentenido
 
@@ -38,14 +39,14 @@ Para que el paquete funcion correctamente, las dependencias necesarias son<br>
 - [Documentación](Documentation.md)
 - [Example de uso (En construcción)]() 
 
-
+<br>
 **Importante**<br>
 El paquete se encuentra en su etapa final de desarrollo.
 Los autores están evaluándolo con datos empíricos y simulados para asegurar su funcionamiento correcto. 
 
-The software is in its final stage of development. 
-Authors are testing it with empirical and simulated datasets to ensure its correct operation.   
+
 <br>
+
 ## **Autores**:
 [Angel Angeles Cortés](https://github.com/4ngel19)  
 email:
