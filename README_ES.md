@@ -1,6 +1,7 @@
+<br>
 ---
 <h1>
-<a href="https://chuchodc.github.io/ConnectR/">ConnectR</a>
+<a href="https://chuchodc.github.io/ConnectR/"> </a>
 </h1>
 
 <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
@@ -28,7 +29,7 @@ Estos cálculos son complementarios a visualizaciones de redes complejas que pue
 
 Este tipo de análisis son relevantes porque nos permiten realizar estudios biogeográficos de fauna fósil usando exclusivamente sus ocurrencias geográficas. Además de la documentación, [ConnectR](https://github.com/ChuchoDC/ConnectR) incluye un conjunto de datos empíricos de peces fósiles del Cretácico, Aulopiformes, un grupo ampliamente distribuido con un registro fósil numeroso y bien conocido. 
 
-Para que el paquete funcion correctamente, las dependencias necesarias son<br>
+Para que el paquete funcione correctamente, las dependencias necesarias son:<br>
 `readxl`<br>
 `dplyr` <br>
 `ggplot2`<br>
