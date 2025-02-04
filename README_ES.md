@@ -1,12 +1,15 @@
-<br>
----
-<h1>
-<a href="https://chuchodc.github.io/ConnectR/"> </a>
-</h1>
+<style>
+  body {
+    margin-top: 20px;
+  }
+</style>
 
+<h1>
+<a href="https://chuchodc.github.io/ConnectR/">ConnectR</a>
+</h1>
 <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
   <img src="images/icono_connectR.png" width="130">
-<a href="https://chuchodc.github.io/ConnectR/README">
+<a href="https://chuchodc.github.io/ConnectR/">
     <img src="https://img.shields.io/badge/See%20in%20English-%23FFFFFF?style=for-the-badge&logoColor=white&color=blue" alt="See in English">
 </a>
 </div>
