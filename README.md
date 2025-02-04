@@ -22,7 +22,7 @@ ages (number of pages) to assess.
 The software will obtain the desired index by each temporality at the time it also carries out 
 parametric sampling of the indexes and plot them.
 These calculations are complementary to complex network visualizations created either 
-in [Gephi](https://gephi.org/) or [igraph Rpackage](https://igraph.org/).
+in [Gephi](https://gephi.org/) or [igraph R package](https://igraph.org/).
 
 These kind of analyses are relevant since they allow us perform biogeographical studies on fossil
 fauna based exclusively on geographical ocurrences. Besides documentation, [ConnectR](https://github.com/ChuchoDC/ConnectR) 
