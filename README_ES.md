@@ -1,5 +1,8 @@
 ---
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<h1>
+<a href="https://chuchodc.github.io/ConnectR/">ConnectR</a>
+</h1>
+
 <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
   <img src="images/icono_connectR.png" width="130">
 <a href="https://chuchodc.github.io/ConnectR/README">
