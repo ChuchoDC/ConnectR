@@ -38,10 +38,12 @@ The input file must be either an Excel file (`.xlsx`) or a CSV file (`.csv`) and
 - **Cell values**: Use `0` for absence and `1` for taxon presence in localities.  
 
 ### Example:
-|         | Locality1 | Locality2 | Locality3 |
-|---------|-----------|-----------|-----------|
-| Taxon 1 | 1         | 0         | 1         |
-| Taxon 2 | 0         | 1         | 1         |
+|         | Locality 1 | Locality 2 | Locality 3 | ... | Locality n |
+|---------|-----------|-----------|-----------|-------|---|
+| Taxon 1 | 1         | 0         | 1         |...    |0  |
+| Taxon 2 | 0         | 1         | 1         |...    |1  | 
+|     ⋮   |  ⋮         |  ⋮        |   ⋮        |  ⋱   | ⋮  |
+| Taxon m | 0         | 0         |  1        |  ...  | 0  |
 
 ---
 
