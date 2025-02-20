@@ -8,7 +8,7 @@
 
 ## **Dependencies**
 
-To run the `ConnectR` function, the following R packages are required:
+To run the `ConnectR` program, the following R packages are required:
 
 - **readxl**: For reading Excel files.  
 - **dplyr**: For data manipulation and processing.  
@@ -26,6 +26,19 @@ install.packages(c("readxl", "dplyr", "ggplot2", "gridExtra", "scales", "pbapply
 ```
 
 ---
+
+### **Local installation**
+
+Next, we proceed to install the library from GitHub. Before install `ConnectR`, verify you have the R package `devtools` installed.
+Since it its necessary to install r packages from github.  
+
+```R
+install.packages("devtools") #install devtools
+devtools::install_github("ChuchoDC/ConnectR")  #install ConnectR
+```
+
+
+
 
 ## **Output Example**
 

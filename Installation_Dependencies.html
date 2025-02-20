@@ -352,12 +352,15 @@ display: none;
 </div>
 
 
+<h1>
+<a href="https://chuchodc.github.io/ConnectR/">ConnectR</a>
+</h1>
 <div id="connectr-installation-and-dependencies" class="section level1">
 <h1>ConnectR: Installation and Dependencies</h1>
 <hr />
 <div id="dependencies" class="section level2">
 <h2><strong>Dependencies</strong></h2>
-<p>To run the <code>ConnectR</code> function, the following R packages
+<p>To run the <code>ConnectR</code> program, the following R packages
 are required:</p>
 <ul>
 <li><strong>readxl</strong>: For reading Excel files.<br />
@@ -382,6 +385,15 @@ packages if they are not already installed. You can install them using
 the following command:</p>
 <pre class="r"><code>install.packages(c(&quot;readxl&quot;, &quot;dplyr&quot;, &quot;ggplot2&quot;, &quot;gridExtra&quot;, &quot;scales&quot;, &quot;pbapply&quot;))</code></pre>
 <hr />
+</div>
+<div id="local-installation" class="section level3">
+<h3><strong>Local installation</strong></h3>
+<p>Next, we proceed to install the library from GitHub. Before install
+<code>ConnectR</code>, verify you have the R package
+<code>devtools</code> installed. Since it its necessary to install r
+packages from github.</p>
+<pre class="r"><code>install.packages(&quot;devtools&quot;) #install devtools
+devtools::install_github(&quot;ChuchoDC/ConnectR&quot;)  #install ConnectR</code></pre>
 </div>
 </div>
 <div id="output-example" class="section level2">
