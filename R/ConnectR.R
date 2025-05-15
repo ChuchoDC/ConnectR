@@ -1,24 +1,36 @@
-library(readxl)
-library(dplyr)
-library(ggplot2)
-library(gridExtra)
-library(scales)
-library(pbapply)
-
-#' Title
+#' ConnectR
 #'
-#' @param file Name of the file
-#' @param type Type of the file (.xlsx or .csv)
-#' @param sheets Number of sheets to process
-#' @param indices Indices to calculate
-#' @param n_boot Number on bootstraps samples for resampling
-#' @param dist_type distibution type: "histogram" or "density"
+#' This package takes a file with the correct format, which can be "xlsx" or "csv".
+#' And perform an parametric bootstrap re-sampling the data for the four coefficients (by now)
+#' such as Biogeographical Connectiveness ["BC"], Average Occurrences ["AO"], Average Endemics ["AE"]
+#' and Network Clustering ["NC"]. This also displays a Dashboard with the values of each coefficient
+#' along side a timer which shows theremain time execution operation. At last it will generate an image
+#' with the arrengment of the grahps for every distribution obtained with the parametric bootstrap method.
 #'
-#' @return an assessment of the biogeographic structuring of the bipartite network provided
+#' @param file Rute to the file to analize
+#' @param type Type of the file either "excel" or "csv"
+#' @param sheets Quantity of sheets (if there's any) to evaluate
+#' @param indices Quantity of indices to evaluate.
+#' @param n_boot Quantity of samples to perform a parametric bootstrap (1000 set by default)
+#' @param dist_type How to display the bootstrap (density set by default)
+#' @param color Range of the palette of colors to display the graphics (scale from blue to red by default)
+#'
+#' @returns Dashboard full of information from the indices and the distribution
+#' graphs for the bootstraps sets.
 #' @export
 #'
-#' @examples ConnectR("Aulopiformesdata.xlsx",".xlsx")
-ConnectR <- function(file, type, sheets = "", indices = "", n_boot = 1000, dist_type = "density") {
+#' @examples connectr(file= "Aulopiformes.xlsx",type= "excel",sheets= c(2)
+#' ,indices=c("BC","AE","NC"),n_boot=3000, color = c("green", "yellow"))
+#'
+
+connectr <- function(file, type, sheets = "", indices = "", n_boot = 1000,
+                     dist_type = "density", color = c("blue", "red")) {
+
+  utils::globalVariables(c("Sheet", "Value"))
+
+  if (length(color) != 2) {
+    stop("El argumento 'color' debe ser un vector de dos colores, por ejemplo: color = c('blue', 'red')")
+  }
 
   if (length(indices) == 0 || any(indices == "")) {
     indices <- c("BC", "AO", "AE", "NC")
@@ -27,8 +39,10 @@ ConnectR <- function(file, type, sheets = "", indices = "", n_boot = 1000, dist_
     sheets <- NULL
   }
 
+
   calc_index <- function(df, indices) {
-    df <- df %>% filter(rowSums(.) > 0)
+
+    df <- df[base::rowSums(df) > 0, ]
 
     N <- nrow(df)
     L <- ncol(df)
@@ -42,7 +56,7 @@ ConnectR <- function(file, type, sheets = "", indices = "", n_boot = 1000, dist_
 
     if ("BC" %in% indices) idx$BC <- (O - N) / (L * N - N)
     if ("AO" %in% indices) idx$AO <- O / L
-    if ("AE" %in% indices) idx$AE <- sum(rowSums(df) == 1) / N
+    if ("AE" %in% indices) idx$AE <- sum(base::rowSums(df) == 1) / N
     if ("NC" %in% indices) {
       connections <- sum(df)
       idx$NC <- connections / (N * (N - 1))
@@ -51,21 +65,23 @@ ConnectR <- function(file, type, sheets = "", indices = "", n_boot = 1000, dist_
     return(as.data.frame(idx))
   }
 
+
   if (type == "excel") {
-    sheet_names <- excel_sheets(file)
+    sheet_names <- readxl::excel_sheets(file)
     selected_sheets <- if (length(sheets) > 0) sheets else 1:length(sheet_names)
     data_list <- lapply(selected_sheets, function(i) {
-      df <- read_excel(file, sheet = i)
-      list(df = df %>% select(where(is.numeric)), sheet_name = sheet_names[i])
+      df <- readxl::read_excel(file, sheet = i)
+      list(df = dplyr::select(df, where(is.numeric)), sheet_name = sheet_names[i])
     })
   } else if (type == "csv") {
-    df <- read.csv(file)
-    data_list <- list(list(df = df %>% select(where(is.numeric)), sheet_name = "CSV"))
+    df <- utils::read.csv(file)
+    data_list <- list(list(df = dplyr::select(df, where(is.numeric)), sheet_name = "CSV"))
   } else {
     stop("Unsupported file type. Use 'excel' or 'csv'.")
   }
 
   omitted_sheets <- character(0)
+
 
   results <- lapply(data_list, function(data) {
     idx <- calc_index(data$df, indices)
@@ -77,16 +93,19 @@ ConnectR <- function(file, type, sheets = "", indices = "", n_boot = 1000, dist_
     }
   })
 
+
   if (length(omitted_sheets) > 0) {
-    message("Warning: The following sheets were omitted due to O = 0 and N = 0: ", paste(omitted_sheets, collapse = ", "))
+    cat("Warning: The following sheets were omitted due to O = 0 and N = 0: ", paste(omitted_sheets, collapse = ", "), "\n")
   }
+
 
   combined_results <- do.call(rbind, results)
   combined_results <- combined_results[complete.cases(combined_results), ]
 
+
   bootstrap_results <- list()
   for (idx in indices) {
-    bootstrap_vals <- pblapply(data_list, function(data) {
+    bootstrap_vals <- pbapply::pblapply(data_list, function(data) {
       sheet_name <- data$sheet_name
       bootstrap_samples <- numeric(n_boot)
       for (b in 1:n_boot) {
@@ -103,6 +122,31 @@ ConnectR <- function(file, type, sheets = "", indices = "", n_boot = 1000, dist_
     bootstrap_results[[idx]] <- do.call(rbind, bootstrap_vals)
   }
 
+  if ("BC" %in% indices) {
+    bc_values <- combined_results[["BC"]]
+    bc_sheets <- combined_results[["Sheet"]]
+
+    bc_values_rounded <- round(bc_values, 1)
+
+    similar_indices <- list()
+
+    for (i in 1:(length(bc_values_rounded) - 1)) {
+      for (j in (i + 1):length(bc_values_rounded)) {
+        if (bc_values_rounded[i] == bc_values_rounded[j]) {
+          similar_indices <- c(similar_indices,
+                               paste(bc_sheets[i],
+                                     " and ",
+                                     bc_sheets[j]))
+        }
+      }
+    }
+
+    if (length(similar_indices) > 0) {
+      cat("There are similar values for BC coeficient in the sheets:\n",
+          paste(similar_indices, collapse = "\n"),". This doesn't mean that they share the same localities. \n")
+    }
+  }
+
   calc_bins <- function(data) {
     n <- length(data)
     if (n > 1) {
@@ -113,38 +157,36 @@ ConnectR <- function(file, type, sheets = "", indices = "", n_boot = 1000, dist_
     return(bins)
   }
 
-  plots <- list()
-  for (idx in indices) {
-    plot_data <- bootstrap_results[[idx]] %>%
-      filter(!is.na(Value) & is.finite(Value))
+
+  color_fun <- scales::seq_gradient_pal(color[1], color[2], "Lab")
+
+
+  plots <- lapply(indices, function(idx) {
+    plot_data <- dplyr::filter(bootstrap_results[[idx]], !is.na(Value) & is.finite(Value))
 
     bins <- calc_bins(plot_data$Value)
 
-    colors <- scales::seq_gradient_pal("blue", "red", "Lab")(seq(0, 1, length.out = length(unique(plot_data$Sheet))))
+    colors <- color_fun(seq(0, 1, length.out = length(unique(plot_data$Sheet))))
 
-    plot <- ggplot(plot_data, aes(x = Value, fill = Sheet))
+    ggplot2::ggplot(plot_data, ggplot2::aes(x = Value, fill = Sheet)) +
+      { if (dist_type == "histogram")
+        ggplot2::geom_histogram(bins = bins, alpha = 0.6, position = "identity", color = "black")
+        else
+          ggplot2::geom_density(alpha = 0.4, color = "black")
+      } +
+      ggplot2::scale_fill_manual(values = colors) +
+      ggplot2::labs(title = paste("Bootstrapped", idx), x = idx, y = "Density", fill = "Sheets") +
+      ggplot2::theme_minimal() +
+      ggplot2::theme(plot.title = ggplot2::element_text(hjust = 0.5))
+  })
 
-    if (dist_type == "histogram") {
-      plot <- plot + geom_histogram(bins = bins, alpha = 0.6, position = "identity", color = "black")
-    } else if (dist_type == "density") {
-      plot <- plot + geom_density(alpha = 0.4, color = "black")
-    } else {
-      stop("Invalid distribution type. Use 'histogram' or 'density'.")
-    }
-
-    plot <- plot +
-      scale_fill_manual(values = colors) +
-      labs(title = paste("Bootstrapped", idx), x = idx, y = "Density", fill = "Sheets") +
-      theme_minimal() +
-      theme(plot.title = element_text(hjust = 0.5))
-
-    plots[[idx]] <- plot
-  }
 
   num_plots <- length(plots)
   rows <- ceiling(sqrt(num_plots))
   cols <- ceiling(num_plots / rows)
-  do.call(grid.arrange, c(plots, ncol = cols))
+
+
+  gridExtra::grid.arrange(grobs = plots, ncol = cols)
 
   return(combined_results)
 }

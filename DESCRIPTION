@@ -1,15 +1,18 @@
 Package: ConnectR
-Title: Assess biogeographic structuration among areas based upon geographical ocurrences
-Version: 1.0.9
+Title: ConnectR
+Version: 1.2.9
 Authors@R: 
-    person("Angel", "Angeles-Cortes", email = "angel_ybs@outlook.es", role = "aut")
-    person("Jesús Alberto", "Díaz-Cruz", email = "vertebrata.j@gmail.com", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0001-8385-9387"))
-Description: The package calculates several indices related to geographical connectivity using fossil geographical ocurrences.
+    person("Angel", "Angeles-Cortes", , "angel_ybs@outlook.es", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Function to evaluate Biogeografic Structuration indices
 License: MIT + file LICENSE
+Imports:
+    dplyr,
+    ggplot2,
+    gridExtra,
+    pbapply,
+    readxl,
+    scales
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
-Depends: 
-    R (>= 3.5)
-LazyData: true
