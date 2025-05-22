@@ -30,12 +30,8 @@
 #'          n_boot = 3000,
 #'          color = c("green", "yellow"))
 #'
-#' connectr(file = "BiogeographyData.csv",
-#'          type = "csv",
-#'          indices = "",
-#'          n_boot = 1000)
 #'
-#' @expor
+#' @export
 
 connectr <- function(file, type, sheets = "", indices = "", n_boot = 1000,
                      dist_type = "density", color = c("blue", "red")) {
