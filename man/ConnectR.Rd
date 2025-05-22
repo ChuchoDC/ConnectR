@@ -2,7 +2,7 @@
 % Please edit documentation in R/ConnectR.R
 \name{connectr}
 \alias{connectr}
-\title{ConnectR}
+\title{Performs Biogeographical Bootstrap Analysis with Visualization}
 \usage{
 connectr(
   file,
@@ -15,34 +15,34 @@ connectr(
 )
 }
 \arguments{
-\item{file}{Rute to the file to analize}
+\item{file}{Path to the file to analyze. Can be a .xlsx or .csv file.}
 
-\item{type}{Type of the file either "excel" or "csv"}
+\item{type}{Type of file: either \code{"excel"} or \code{"csv"}.}
 
-\item{sheets}{Quantity of sheets (if there's any) to evaluate}
+\item{sheets}{Sheet(s) to analyze (for Excel files). Use a character vector with sheet names or a numeric vector with sheet indices. Ignored for CSV files.}
 
-\item{indices}{Quantity of indices to evaluate.}
+\item{indices}{Biogeographical indices to calculate. Options include \code{"BC"}, \code{"AO"}, \code{"AE"}, and \code{"NC"}. Use \code{""} to compute all.}
 
-\item{n_boot}{Quantity of samples to perform a parametric bootstrap (1000 set by default)}
+\item{n_boot}{Number of samples to generate using parametric bootstrap. Default is 1000.}
 
-\item{dist_type}{How to display the bootstrap (density set by default)}
+\item{dist_type}{Type of plot to display the bootstrap distributions. Options: \code{"density"} or \code{"histogram"}. Default is \code{"density"}.}
 
-\item{color}{Range of the palette of colors to display the graphics (scale from blue to red by default)}
+\item{color}{Color palette range used in plots. Default is \code{c("blue", "red")}.}
 }
 \value{
-Dashboard full of information from the indices and the distribution
-graphs for the bootstraps sets.
+A dashboard visualizing the selected biogeographical indices and their bootstrap distributions, along with summary statistics and a timer showing the execution time.
 }
 \description{
-This package takes a file with the correct format, which can be "xlsx" or "csv".
-And perform an parametric bootstrap re-sampling the data for the four coefficients (by now)
-such as Biogeographical Connectiveness \link{"BC"}, Average Occurrences \link{"AO"}, Average Endemics \link{"AE"}
-and Network Clustering \link{"NC"}. This also displays a Dashboard with the values of each coefficient
-along side a timer which shows theremain time execution operation. At last it will generate an image
-with the arrengment of the grahps for every distribution obtained with the parametric bootstrap method.
+This function processes a biogeographical dataset provided as a .csv or .xlsx file and calculates connectivity-related indices including Biogeographical Connectiveness (BC), Average Occurrences (AO), Average Endemics (AE), and Network Clustering (NC). It applies parametric bootstrap sampling to each selected index and presents the results in an interactive dashboard, accompanied by distribution plots and timing information.
+
+The function also generates a final graphical summary showing the arrangement of the bootstrap distribution plots for all evaluated indices.
 }
 \examples{
-connectr(file= "Aulopiformes.xlsx",type= "excel",sheets= c(2)
-,indices=c("BC","AE","NC"),n_boot=3000, color = c("green", "yellow"))
+# Example with Excel file
+connectr(file = "Aulopiformes.xlsx",
+         type = "excel",
+         sheets = c(2),
+         indices = c("BC", "AE", "NC"),
+         n_boot = 3000,
+         color = c("green", "yellow"))
 
-}
