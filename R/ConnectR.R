@@ -1,27 +1,41 @@
-#' ConnectR
+#' Performs Biogeographical Bootstrap Analysis with Visualization
 #'
-#' This package takes a file with the correct format, which can be "xlsx" or "csv".
-#' And perform an parametric bootstrap re-sampling the data for the four coefficients (by now)
-#' such as Biogeographical Connectiveness ["BC"], Average Occurrences ["AO"], Average Endemics ["AE"]
-#' and Network Clustering ["NC"]. This also displays a Dashboard with the values of each coefficient
-#' along side a timer which shows theremain time execution operation. At last it will generate an image
-#' with the arrengment of the grahps for every distribution obtained with the parametric bootstrap method.
+#' This function processes a biogeographical dataset provided as a .csv or .xlsx file and
+#' calculates connectivity-related indices including Biogeographical Connectiveness (BC),
+#' Average Occurrences (AO), Average Endemics (AE), and Network Clustering (NC).
+#' It applies parametric bootstrap sampling to each selected index and presents the results
+#' in an interactive dashboard, accompanied by distribution plots and timing information.
 #'
-#' @param file Rute to the file to analize
-#' @param type Type of the file either "excel" or "csv"
-#' @param sheets Quantity of sheets (if there's any) to evaluate
-#' @param indices Quantity of indices to evaluate.
-#' @param n_boot Quantity of samples to perform a parametric bootstrap (1000 set by default)
-#' @param dist_type How to display the bootstrap (density set by default)
-#' @param color Range of the palette of colors to display the graphics (scale from blue to red by default)
+#' The function also generates a final graphical summary showing the arrangement of
+#' the bootstrap distribution plots for all evaluated indices.
 #'
-#' @returns Dashboard full of information from the indices and the distribution
-#' graphs for the bootstraps sets.
-#' @export
+#' @param file Path to the file to analyze. Can be a .xlsx or .csv file.
+#' @param type Type of file: either "excel" or "csv".
+#' @param sheets Sheet(s) to analyze (for Excel files). Use a character vector with sheet
+#'   names or a numeric vector with sheet indices. Ignored for CSV files.
+#' @param indices Biogeographical indices to calculate. Options include "BC", "AO", "AE", and "NC".
+#'   Use "" to compute all.
+#' @param n_boot Number of samples to generate using parametric bootstrap. Default is 1000.
+#' @param dist_type Type of plot to display the bootstrap distributions. Options: "density" or "histogram".
+#'   Default is "density".
+#' @param color Color palette range used in plots. Default is c("blue", "red").
 #'
-#' @examples connectr(file= "Aulopiformes.xlsx",type= "excel",sheets= c(2)
-#' ,indices=c("BC","AE","NC"),n_boot=3000, color = c("green", "yellow"))
+#' @return A dashboard visualizing the selected biogeographical indices and their bootstrap
+#'   distributions, along with summary statistics and a timer showing execution time.
+#' @examples
+#' connectr(file = "Aulopiformes.xlsx",
+#'          type = "excel",
+#'          sheets = c(2),
+#'          indices = c("BC", "AE", "NC"),
+#'          n_boot = 3000,
+#'          color = c("green", "yellow"))
 #'
+#' connectr(file = "BiogeographyData.csv",
+#'          type = "csv",
+#'          indices = "",
+#'          n_boot = 1000)
+#'
+#' @expor
 
 connectr <- function(file, type, sheets = "", indices = "", n_boot = 1000,
                      dist_type = "density", color = c("blue", "red")) {
