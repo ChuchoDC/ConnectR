@@ -131,31 +131,32 @@ connectr <- function(file, type, sheets = "", indices = "", n_boot = 1000,
     bootstrap_results[[idx]] <- do.call(rbind, bootstrap_vals)
   }
 
-  if ("BC" %in% indices) {
-    bc_values <- combined_results[["BC"]]
-    bc_sheets <- combined_results[["Sheet"]]
+if ("BC" %in% indices) {
+  bc_values <- combined_results[["BC"]]
+  bc_sheets <- combined_results[["Sheet"]]
 
+  if (length(bc_values) >= 2) {
     bc_values_rounded <- round(bc_values, 1)
 
     similar_indices <- list()
 
     for (i in 1:(length(bc_values_rounded) - 1)) {
       for (j in (i + 1):length(bc_values_rounded)) {
-        if (!is.na(bc_values_rounded[i]) && !is.na(bc_values_rounded[j]) &&
-            bc_values_rounded[i] == bc_values_rounded[j]) {
+        val_i <- bc_values_rounded[i]
+        val_j <- bc_values_rounded[j]
+        if (!is.na(val_i) && !is.na(val_j) && val_i == val_j) {
           similar_indices <- c(similar_indices,
-                               paste(bc_sheets[i],
-                                     " and ",
-                                     bc_sheets[j]))
+                               paste(bc_sheets[i], " and ", bc_sheets[j]))
         }
       }
     }
 
     if (length(similar_indices) > 0) {
       cat("There are similar values for BC coeficient in the sheets:\n",
-          paste(similar_indices, collapse = "\n"),". This doesn't mean that they share the same localities. \n")
+          paste(similar_indices, collapse = "\n"), ". This doesn't mean that they share the same localities. \n")
     }
   }
+}
 
   calc_bins <- function(data) {
     n <- length(data)
