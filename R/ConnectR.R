@@ -141,7 +141,8 @@ connectr <- function(file, type, sheets = "", indices = "", n_boot = 1000,
 
     for (i in 1:(length(bc_values_rounded) - 1)) {
       for (j in (i + 1):length(bc_values_rounded)) {
-        if (bc_values_rounded[i] == bc_values_rounded[j]) {
+        if (!is.na(bc_values_rounded[i]) && !is.na(bc_values_rounded[j]) &&
+            bc_values_rounded[i] == bc_values_rounded[j]) {
           similar_indices <- c(similar_indices,
                                paste(bc_sheets[i],
                                      " and ",
