@@ -36,7 +36,6 @@
 connectr <- function(file, type, sheets = "", indices = "", n_boot = 1000,
                      dist_type = "density", color = c("blue", "red")) {
 
-  utils::globalVariables(c("Sheet", "Value"))
 
   if (length(color) != 2) {
     stop("El argumento 'color' debe ser un vector de dos colores, por ejemplo: color = c('blue', 'red')")
