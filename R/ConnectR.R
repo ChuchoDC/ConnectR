@@ -30,6 +30,11 @@
 #'          n_boot = 3000,
 #'          color = c("green", "yellow"))
 #'
+#' @references
+#' Sidor, C. A., Vilhena, D. A., Angielczyk, K. D., Huttenlocker, A. K., Nesbitt, S. J., Peecook, B. R., Steyer,
+#' J. S., Smith, R. M. H., & Tsujii, L. A. (2013). Provincialization of terrestrial faunas following the end-Permian 
+#' mass extinction. Proceedings of the National Academy of Sciences, 110(20), 8129–8133. 
+#' https://doi.org/10.1073/pnas.1302323110
 #'
 #' @export
 
